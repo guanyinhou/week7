@@ -190,7 +190,7 @@ export default {
   data() {
     return {
       coupons: {},
-      tempCoupon:{
+      tempCoupon: {
         title: "",
         enabled: false,
         percent: 100,

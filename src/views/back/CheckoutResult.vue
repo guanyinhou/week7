@@ -173,7 +173,7 @@ export default {
         });
     },
     payOrder() {
-    //   this.isLoading = true;
+      //   this.isLoading = true;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/ec/orders/${this.orderId}/paying`;
       this.$http
         .post(url)
@@ -181,12 +181,12 @@ export default {
           if (res.data.data.paid) {
             this.getDetail(this.orderId);
           }
-        //   this.isLoading = true;
+          //   this.isLoading = true;
           this.getOrders();
         })
         .catch(err => {
           console.dir(err);
-        //   this.isLoading = true;
+          //   this.isLoading = true;
         });
     }
   }
