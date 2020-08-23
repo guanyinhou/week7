@@ -1,0 +1,49 @@
+// @import "~bootstrap/scss/functions";
+// @import "./helpers/_variables";
+// @import "~bootstrap/scss/bootstrap";
+
+*{
+    body{
+        font-family: microsoft jhenghei, Avenir, Helvetica, Arial, sans-serif;
+        .toast-outer{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            min-width: 300px;
+            z-index: 11111;
+        }
+        .alert-color{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            // margin-right: 10px;
+            margin-right: 0.5rem;
+            border-radius: 0.25rem;
+        }
+        nav+.container-fluid{
+            margin-top: 60px;
+        }
+        .page-link{
+            color: #17a2b8;
+        }
+        .page-item.active .page-link{
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+        .navbar-nav{
+            width: 100%;
+        }
+        .nav-link.router-link-exact-active.router-link-active{
+            color: rgba(0,0,0,0.9);
+        }
+        .pics{
+            img{
+                width: 150px;
+            }
+        }
+        .old-price{
+            color: gray;
+            text-decoration: line-through;
+        }
+    }
+}

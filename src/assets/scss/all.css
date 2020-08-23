@@ -1,0 +1,21 @@
+*, body {
+  font-family: microsoft jhenghei, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* .toast-outer, body .toast-outer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 300px;
+  z-index: 11111;
+}
+
+* .alert-color, body .alert-color {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+}
+/*# sourceMappingURL=all.css.map */
