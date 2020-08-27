@@ -17,6 +17,7 @@
       <thead>
         <tr>
           <th>排序</th>
+          <th>商品編號</th>
           <th>分類</th>
           <th>商品名稱</th>
           <th>原價</th>
@@ -28,6 +29,7 @@
       <tbody>
         <tr v-for="(prod, i) in prods" :key="prod.id">
           <td>{{ i + 1 }}</td>
+          <td>{{ prod.options.sku }}</td>
           <td>{{ prod.category }}</td>
           <td>{{ prod.title }}</td>
           <td>{{ prod.origin_price | currency }}</td>
@@ -87,7 +89,7 @@
             <div class="row">
               <div class="col-sm-5">
                 <!-- 輸入圖片連結 -->
-                <!-- <div class="form-group" v-for="i in 5" :key="i + 'img'">
+                <div class="form-group" v-for="i in 5" :key="i + 'img'">
                   <label for="img">圖片網址</label>
                   <input
                     type="text"
@@ -96,7 +98,7 @@
                     placeholder="請輸入圖片連結"
                     v-model="tempProd.imageUrl[i - 1]"
                   />
-                </div> -->
+                </div>
                 <div class="form-group">
                   <label for="uploadImg">
                     上傳圖片
@@ -117,7 +119,7 @@
               </div>
               <div class="col-sm-7">
                 <div class="row">
-                  <div class="col-sm-12">
+                  <div class="col-sm-6">
                     <div class="form-group">
                       <label for="title">標題</label>
                       <input
@@ -127,6 +129,19 @@
                         required
                         v-model="tempProd.title"
                         placeholder="請輸入標題"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="sku">商品編號</label>
+                      <input
+                        type="text"
+                        id="sku"
+                        class="form-control"
+                        required
+                        v-model="tempProd.options.sku"
+                        placeholder="請輸入商品編號"
                       />
                     </div>
                   </div>
@@ -303,7 +318,10 @@ export default {
       isLoading: false,
       prods: [],
       tempProd: {
-        imageUrl: []
+        imageUrl: [],
+        options: {
+          sku: ""
+        }
       },
       pagination: {},
       isNew: false,
@@ -323,7 +341,7 @@ export default {
       this.$http
         .get(url)
         .then(res => {
-          // console.log(res);
+          console.log(res);
           this.prods = res.data.data;
           this.isLoading = false;
           this.pagination = res.data.meta.pagination;
@@ -356,7 +374,10 @@ export default {
       switch (isNew) {
         case "new":
           this.tempProd = {
-            imageUrl: []
+            imageUrl: [],
+            options: {
+              sku: ""
+            }
           };
           this.isNew = true;
           $("#prodModal").modal("show");
