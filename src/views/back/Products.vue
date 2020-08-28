@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="product-list">
     <Loading :active.sync="isLoading" />
     <div class="text-right mt-4">
       <h3 class="float-left">商品列表</h3>
