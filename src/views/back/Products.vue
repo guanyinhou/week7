@@ -17,6 +17,7 @@
       <thead>
         <tr>
           <th>排序</th>
+          <th>商品圖片</th>
           <th>商品編號</th>
           <th>分類</th>
           <th>商品名稱</th>
@@ -29,6 +30,7 @@
       <tbody>
         <tr v-for="(prod, i) in prods" :key="prod.id">
           <td>{{ i + 1 }}</td>
+          <td>{{ prod.imageUrl[0] }}</td>
           <td>{{ prod.options.sku }}</td>
           <td>{{ prod.category }}</td>
           <td>{{ prod.title }}</td>
