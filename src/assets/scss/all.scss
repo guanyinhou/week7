@@ -45,5 +45,10 @@
             color: gray;
             text-decoration: line-through;
         }
+        .product-list{
+            img{
+                max-width: 150px;
+            }
+        }
     }
 }
