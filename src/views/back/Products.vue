@@ -30,7 +30,7 @@
       <tbody>
         <tr v-for="(prod, i) in prods" :key="prod.id">
           <td>{{ i + 1 }}</td>
-          <td>{{ prod.imageUrl[0] }}</td>
+          <td><img :src="prod.imageUrl[0]" alt="" /></td>
           <td>{{ prod.options.sku }}</td>
           <td>{{ prod.category }}</td>
           <td>{{ prod.title }}</td>
