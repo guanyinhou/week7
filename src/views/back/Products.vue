@@ -30,7 +30,9 @@
       <tbody>
         <tr v-for="(prod, i) in prods" :key="prod.id">
           <td>{{ i + 1 }}</td>
-          <td><img :src="prod.imageUrl[0]" alt="" /></td>
+          <td>
+            <div class="list-img"><img :src="prod.imageUrl[0]" alt="" /></div>
+          </td>
           <td>{{ prod.options.sku }}</td>
           <td>{{ prod.category }}</td>
           <td>{{ prod.title }}</td>
@@ -105,7 +107,7 @@
                   <label for="uploadImg">
                     上傳圖片
                     <i
-                      class="fas fa-spinner fa-spin"
+                      class="fa fa-spinner fa-pulse fa-fw"
                       v-if="status.fileUploading"
                     />
                   </label>
