@@ -98,7 +98,7 @@ export default {
   methods: {
     signout() {
       document.cookie = "tokenName=;expire=;";
-      window.location = "/weeek7/dist/#/";
+      window.location = "/week7/dist/#/";
     }
   }
 };
