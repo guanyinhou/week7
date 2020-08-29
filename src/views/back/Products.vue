@@ -425,7 +425,9 @@ export default {
           console.dir(err);
           this.$bus.$emit(
             "message:push",
-            `商品${this.isNew ? "新增" : "更新"}失敗`,
+            `商品${this.isNew ? "新增" : "更新"}失敗：${
+              err.response.data.errors.title[0]
+            }`,
             "danger"
           );
           this.isLoading = false;
